@@ -1,0 +1,21 @@
+/* Style for the "New Contact" button */
+.new-contact-button {
+  background-color: green;
+  color: white;
+}
+
+/* Style for the "Edit" button */
+.edit-button {
+  color: blue;
+}
+
+/* Style for the "Delete" button */
+.delete-button {
+  color: red;
+}
+
+/* Additional styles if needed */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}

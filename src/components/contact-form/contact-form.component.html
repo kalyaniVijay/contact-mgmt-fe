@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{ data.id ? "Edit" : "Add" }} Contact</h1>
+<div mat-dialog-content>
+  <form [formGroup]="contactForm">
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName" />
+      <mat-error *ngIf="contactForm.get('firstName')?.hasError('required')">
+        First Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName" />
+      <mat-error *ngIf="contactForm.get('lastName')?.hasError('required')">
+        Last Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" />
+      <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+        Invalid email
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSaveClick()" [disabled]="contactForm.invalid">
+    Save
+  </button>
+</div>
